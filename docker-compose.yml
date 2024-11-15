@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - "3002:3002"
+    environment:
+      - NUM_WORKERS_PER_QUEUE=8
+      - PORT=3002
+      - HOST=0.0.0.0
+      - REDIS_URL=redis://redis:6379
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379
+      - USE_DB_AUTHENTICATION=false
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"

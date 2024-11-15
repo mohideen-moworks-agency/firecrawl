@@ -1,0 +1,17 @@
+{
+  "name": "firecrawl-deployment",
+  "version": "1.0.0",
+  "description": "Firecrawl self-hosted deployment",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"No build step required\"",
+    "start": "node apps/api/src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "bull": "^4.10.4",
+    "redis": "^4.6.7",
+    "playwright": "^1.35.1",
+    "puppeteer": "^20.7.3"
+  }
+}
